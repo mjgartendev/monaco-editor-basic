@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<style>
+		html, *::before, *::after{box-sizing: border-box}
+		body{
+			padding: 0;
+			margin: 0;
+			height: 100vh;
+			widows: 100vw;
+			display: grid;
+			grid-template-areas: 'l r';
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr;
+			overflow: hidden;
+		}
+		#code{
+			grid-area: l;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+		}
+		.editor{
+			height: 100%;
+			width: 100%;
+		}
+		#output, iframe{
+			grid-area: r;
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		p{
+			padding: 0;
+			margin: 0;
+			background: #333;
+			color: white;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+
+<div id="code">
+<p>Markup</p>
+<div class="editor" id="markup"></div>
+<p>Style</p>
+<div class="editor"  id="style"></div>
+<p>Script</p>
+<div class="editor"  id="script"></div>
+</div>
+<div id="output"></div>
+<script src="./dist/app.bundle.js"></script>
+
+</body>
+</html>
